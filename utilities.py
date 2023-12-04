@@ -35,12 +35,16 @@ def final_redirect_url(url):
     redirected_url = requests.head(url, allow_redirects=True).url
     if url != redirected_url:
         log.debug('''Redirected url '%s' to '%s'.''', url, redirected_url)
-    
+
     # for certain podcasts, the '#=' is added to the audio URL which causes Sonos to fail to connect
     regex='#t=[0-9]*$'
     if re.search(regex, redirected_url):
         log.debug('Truncating the \'#t=\' part of the audio URL.')
         redirected_url = re.sub(regex, '', redirected_url)
+
+    #if '?' in redirected_url:
+    #    redirected_url = redirected_url.split('?')[0]
+    #    log.debug('Removing the query parameters from the audio URL.')
 
     return redirected_url
 
