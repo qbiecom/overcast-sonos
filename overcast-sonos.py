@@ -86,10 +86,11 @@ def fixed_mimetype_for_episode(episode):
     if 'Group Therapy Radio' in title:
         log.debug('Forcing \'audio/mp4\' for the mime_type.')
         return 'audio/mp4'
-    elif title == 'Monstercat: Call of the Wild' or title == 'Monstercat Silk Showcase':
+    elif 'Monstercat' in title:
         log.debug('Forcing \'audio/mpeg\' for the mime_type.')
         return 'audio/mpeg'
     else:
+        log.debug('Leaving \'' + episode['audio_type'] + '\' for the mime_type.')
         return episode['audio_type']
 
 # returns a media collection object for a podcast entry
