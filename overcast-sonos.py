@@ -1,7 +1,6 @@
 import os
 import http
 import logging
-import uuid
 from overcast import Overcast, utilities
 from pysimplesoap.server import SoapDispatcher, SOAPHandler
 from http.server import HTTPServer
@@ -17,6 +16,7 @@ UNPLAYED_PODCASTS_ID = 'unplayed_podcasts'
 UNPLAYED_PODCAST_ID_PREFIX = 'podcast_unplayed'
 PODCAST_ID_PREFIX = 'podcast'
 REPORT_PLAY_SECONDS_INTERVAL = 30
+CATALOG_VERSION = '1'
 
 class customSOAPHandler(SOAPHandler):
     def do_GET(self):
@@ -272,7 +272,7 @@ dispatcher.register_function(
 
 def getLastUpdate():
     log.debug('at=getLastUpdate')
-    return {'getLastUpdateResult': {'catalog': str(uuid.uuid4()), 'favorites': '0', 'pollInterval': 60}}
+    return {'getLastUpdateResult': {'catalog': CATALOG_VERSION, 'favorites': '0', 'pollInterval': 60}}
 
 
 dispatcher.register_function(
