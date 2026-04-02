@@ -17,6 +17,7 @@
 This should work on any recent version of Python 3. At the time of writing it has been tested on:
  - Python 3.8.5 on Ubuntu 20.04 (See known issues below)
  - Python 3.9.4 on Manjaro 21.0.3
+ - Python 3.11.6 on Windows 11
 
 **Usage:**
 
