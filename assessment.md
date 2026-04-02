@@ -2,9 +2,9 @@
 
 ## Scope
 
-This assessment is based on a static review of the repository contents in `README.md`, `overcast-sonos.py`, `overcast.py`, `utilities.py`, `requirements.txt`, `overcast-sonos.service`, and `install_notes.txt`.
+This assessment is based on a review of the repository contents in `README.md`, `overcast-sonos.py`, `overcast.py`, `utilities.py`, `requirements.txt`, `overcast-sonos.service`, and `install_notes.txt`.
 
-Runtime validation was not possible in this environment because a Python interpreter was not available, so the notes below focus on code structure, correctness, maintainability, and likely runtime behavior.
+Basic runtime validation is now possible with a portable Python installation, but the notes below are still primarily based on code structure, correctness, maintainability, and likely runtime behavior.
 
 ## What the app currently does well
 
